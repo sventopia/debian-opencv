@@ -10,7 +10,8 @@ RUN apt-get install -y python-dev python-tk python-numpy python3-dev python3-tk 
 RUN apt-get install -y ant default-jdk
 RUN apt-get install -y wget zip
 RUN wget https://github.com/Itseez/opencv/archive/3.0.0.zip
-RUN unzip *.zip; cd opencv*
+RUN unzip *.zip
+RUN cd opencv*
 RUN mkdir build; cd build
 RUN cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DWITH_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON ..
 RUN make -j4
